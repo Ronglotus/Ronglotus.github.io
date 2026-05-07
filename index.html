@@ -3,8 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Rong Tang</title>
-<meta name="description" content="Rong Tang — Postdoctoral Fellow, Department of Applied Mathematics, The Hong Kong Polytechnic University. Numerical methods for partial differential equations, finite element methods, geometric flows, fluid–structure interaction." />
+<title>Rong Tang — Applied Mathematics, PolyU</title>
+<meta name="description" content="Rong Tang. Assistant Professor in the Department of Applied Mathematics at The Hong Kong Polytechnic University. Numerical analysis and scientific computing." />
+
+<!-- Open Graph for nice link previews -->
+<meta property="og:title" content="Rong Tang — Applied Mathematics, PolyU" />
+<meta property="og:description" content="Assistant Professor of Applied Mathematics, The Hong Kong Polytechnic University." />
+<meta property="og:type" content="profile" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,261 +18,323 @@
 <style>
   :root{
     --bg:        #ffffff;
+    --rule:      #e5e1d8;
+    --rule-soft: #efece5;
     --ink:       #14181f;
-    --ink-soft:  #2a3140;
-    --ink-mute:  #6a7280;
-    --rule:      #e7eaef;
-    --rule-soft: #f1f3f6;
+    --ink-soft:  #3a3f4a;
+    --ink-mute:  #757066;
+    --ink-faint: #a8a397;
     --link:      #1a4b8c;
-    --link-hover:#0c2d5a;
-    --accent:    #b34a2e;
+    --link-hover:#0f2d57;
+    --highlight: #fff8d6;
+    --max-w:     760px;
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
+
   body{
     background:var(--bg);
     color:var(--ink);
     font-family:"Source Serif 4",Georgia,serif;
     font-optical-sizing:auto;
+    font-feature-settings:"kern","liga","calt";
     font-weight:400;
     font-size:17px;
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
   }
-  ::selection{background:var(--ink);color:#fff}
+
+  ::selection{background:var(--highlight);color:var(--ink)}
 
   a{
     color:var(--link);
-    text-decoration:none;
-    border-bottom:1px solid rgba(26,75,140,.25);
-    transition:color .15s, border-color .15s;
+    text-decoration:underline;
+    text-decoration-color:rgba(26,75,140,.3);
+    text-decoration-thickness:1px;
+    text-underline-offset:2.5px;
+    transition:color .15s ease, text-decoration-color .15s ease;
   }
-  a:hover{color:var(--link-hover);border-bottom-color:var(--link-hover)}
+  a:hover{
+    color:var(--link-hover);
+    text-decoration-color:var(--link-hover);
+  }
 
-  .wrap{max-width:760px;margin:0 auto;padding:0 28px}
+  .wrap{max-width:var(--max-w);margin:0 auto;padding:0 28px}
 
-  /* ============ TOP NAV ============ */
+  /* tabular numbers for dates and references */
+  .tnum{font-feature-settings:"tnum","kern"}
+
+  /* ============ HEADER (minimal sticky) ============ */
   header.top{
     border-bottom:1px solid var(--rule);
-    padding:16px 0;
-    background:#fff;
-    position:sticky;top:0;z-index:30;
-    backdrop-filter:saturate(180%) blur(8px);
-    background:rgba(255,255,255,.92);
+    padding:14px 0;
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
   }
-  .top-row{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .top-row{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;flex-wrap:wrap;
+  }
   .brand{
     font-family:"Source Serif 4",serif;
-    font-weight:500;
-    font-size:15px;
+    font-weight:600;font-size:15px;
     color:var(--ink);
     letter-spacing:.005em;
   }
-  .brand .dot{color:var(--accent);margin:0 6px}
   nav.primary{
     display:flex;gap:22px;
-    font-family:"Source Serif 4",serif;
-    font-size:14.5px;
+    font-size:13.5px;
   }
-  nav.primary a{color:var(--ink-soft);border:none}
+  nav.primary a{
+    color:var(--ink-mute);
+    text-decoration:none;border:none;
+    transition:color .15s ease;
+  }
   nav.primary a:hover{color:var(--link)}
 
   /* ============ HERO ============ */
-  .hero{padding:64px 0 12px}
+  .hero{padding:60px 0 16px}
+
   h1.name{
     font-family:"Source Serif 4",serif;
+    font-variation-settings:"opsz" 60;
     font-weight:400;
-    font-size:clamp(32px,4.5vw,42px);
+    font-size:clamp(34px,5vw,44px);
     line-height:1.05;
-    letter-spacing:-.02em;
+    letter-spacing:-.022em;
     color:var(--ink);
-    margin-bottom:14px;
+    margin-bottom:18px;
   }
-  .hero .role{
-    font-size:18px;
+
+  .role{
+    font-size:17px;
     color:var(--ink);
-    margin-bottom:4px;
+    line-height:1.5;
+    margin-bottom:6px;
     font-weight:500;
   }
-  .hero .affil{
-    font-size:17px;
+
+  .affil{
+    font-size:16px;
     color:var(--ink-soft);
-    line-height:1.5;
+    line-height:1.55;
     margin-bottom:24px;
   }
+  .affil a{
+    color:inherit;
+    text-decoration-color:rgba(58,63,74,.3);
+  }
+  .affil a:hover{
+    color:var(--link);
+    text-decoration-color:var(--link);
+  }
 
-  .contact-list{
-    list-style:none;
-    display:grid;
-    gap:6px;
-    font-size:15.5px;
-    border-top:1px solid var(--rule);
-    border-bottom:1px solid var(--rule);
-    padding:18px 0;
-    margin-top:8px;
+  /* contact list */
+  ul.contact-list{list-style:none;border-top:1px solid var(--rule-soft);padding-top:14px}
+  ul.contact-list li{
+    display:flex;gap:14px;align-items:baseline;
+    padding:5px 0;font-size:15px;
   }
-  .contact-list li{
-    display:grid;
-    grid-template-columns: 92px 1fr;
-    gap:18px;
-    align-items:baseline;
-  }
-  .contact-list .label{
+  ul.contact-list li .label{
     font-family:"JetBrains Mono",monospace;
     font-size:11px;
-    letter-spacing:.16em;
-    text-transform:uppercase;
+    letter-spacing:.1em;text-transform:uppercase;
     color:var(--ink-mute);
-    padding-top:3px;
+    width:70px;flex-shrink:0;
   }
-  .contact-list .val{color:var(--ink-soft)}
-  .contact-list .val a{font-family:"JetBrains Mono",monospace;font-size:13.5px}
-
-  .profile-links{
-    display:flex;flex-wrap:wrap;gap:8px 16px;
-    margin-top:22px;
-    font-size:14px;
-  }
-  .profile-links a{
+  ul.contact-list li .val{color:var(--ink-soft)}
+  ul.contact-list li .val a{
     font-family:"JetBrains Mono",monospace;
-    font-size:12px;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    border:1px solid var(--rule);
-    padding:6px 11px;
-    border-radius:2px;
-    color:var(--ink-soft);
+    font-size:13.5px;
   }
-  .profile-links a:hover{border-color:var(--link);color:var(--link);background:rgba(26,75,140,.04)}
+  ul.contact-list li .val .sep{
+    color:var(--ink-faint);
+    margin:0 6px;
+    font-family:"Source Serif 4",serif;
+    font-size:13px;
+  }
 
-  /* ============ SECTION ============ */
-  section.block{padding:44px 0;border-top:1px solid var(--rule)}
-  section.block:first-of-type{border-top:none;padding-top:38px}
+  /* ============ SECTIONS ============ */
+  section.block{padding:38px 0 6px}
 
   h2.section-title{
     font-family:"Source Serif 4",serif;
-    font-weight:500;
-    font-size:13px;
-    letter-spacing:.22em;
-    text-transform:uppercase;
-    color:var(--ink-mute);
-    margin-bottom:24px;
+    font-weight:600;
+    font-size:16px;
+    letter-spacing:.005em;
+    color:var(--ink);
+    margin-bottom:22px;
     display:flex;align-items:center;gap:14px;
   }
   h2.section-title::after{
-    content:"";flex:1;height:1px;background:var(--rule);
+    content:"";flex:1;height:1px;
+    background:var(--rule);
   }
 
-  /* Larger, darker titles for Employment and Education */
-  #employment h2.section-title,
-  #education h2.section-title,
-  #publications h2.section-title{
-    font-size:16px;
-    color:var(--ink);
-    font-weight:600;
+  .content p{
+    color:var(--ink-soft);font-size:16px;
+    line-height:1.7;margin-bottom:14px;
   }
 
-  .content p{margin-bottom:14px;color:var(--ink-soft);font-size:17px}
-  .content p:last-child{margin-bottom:0}
-
-  /* research interests */
-  .interests{list-style:none;display:grid;gap:9px}
-  .interests li{
-    padding-left:20px;
-    position:relative;
-    color:var(--ink-soft);
-    font-size:16.5px;
-    line-height:1.5;
-  }
-  .interests li::before{
-    content:"·";
-    position:absolute;left:6px;top:-2px;
-    color:var(--accent);
-    font-size:22px;
-    line-height:1;
-  }
-
-  /* date-aligned rows for education, employment, awards */
+  /* ============ EMPLOYMENT / EDUCATION ROWS ============ */
   .rows{display:grid;gap:0}
   .row{
     display:grid;
-    grid-template-columns: 130px 1fr;
+    grid-template-columns:140px 1fr;
     gap:24px;
-    padding:13px 0;
+    padding:14px 0;
     border-top:1px solid var(--rule-soft);
     align-items:baseline;
   }
-  .row:first-child{border-top:none;padding-top:0}
+  .row:first-child{border-top:none;padding-top:2px}
+
   .row .when{
     font-family:"JetBrains Mono",monospace;
     font-size:12px;
-    letter-spacing:.04em;
+    letter-spacing:.02em;
     color:var(--ink);
-    padding-top:2px;
+    font-weight:500;
+    padding-top:3px;
+    font-feature-settings:"tnum";
+  }
+  .row .when .present{
+    color:var(--link);
     font-weight:500;
   }
-  .row .what{font-size:17px;color:var(--ink);line-height:1.45;font-weight:500}
-  .row .what .desc{display:block;color:var(--ink-soft);font-size:15px;margin-top:4px;font-style:italic;font-weight:400}
-  .row .what em.where{color:var(--ink-soft);font-style:normal}
+
+  .row .what{
+    font-size:17px;
+    color:var(--ink);
+    line-height:1.45;
+    font-weight:500;
+  }
+  .row .what .desc{
+    display:block;
+    color:var(--ink-soft);
+    font-size:15px;
+    margin-top:4px;
+    font-style:italic;
+    font-weight:400;
+  }
 
   /* ============ PUBLICATIONS ============ */
   ol.pubs{list-style:none;counter-reset:pub}
   ol.pubs li{
     counter-increment:pub;
-    padding:18px 0 18px 36px;
+    padding:18px 0 18px 38px;
     border-top:1px solid var(--rule-soft);
     position:relative;
+    transition:background .15s ease;
   }
-  ol.pubs li:first-child{border-top:none;padding-top:4px}
+  ol.pubs li:first-child{border-top:none}
+  ol.pubs li:hover{background:#fcfbf6}
+
   ol.pubs li::before{
-    content: counter(pub);
-    position:absolute;left:0;top:21px;
+    content:"[" counter(pub) "]";
+    position:absolute;left:0;top:20px;
     font-family:"JetBrains Mono",monospace;
     font-size:12px;
     color:var(--ink-mute);
+    font-feature-settings:"tnum";
   }
-  ol.pubs li:first-child::before{top:7px}
-  .pub-line{
+  ol.pubs li:first-child::before{top:2px}
+
+  .pub-authors{
+    font-size:14.5px;
+    color:var(--ink-mute);
+    line-height:1.5;
+    margin-bottom:4px;
+  }
+  .pub-authors .me{
+    color:var(--ink);
+    font-weight:600;
+  }
+
+  .pub-title{
     font-size:16.5px;
-    line-height:1.55;
-    color:var(--ink-soft);
+    color:var(--ink);
+    font-weight:500;
+    line-height:1.4;
+    margin-bottom:5px;
+    letter-spacing:-.005em;
   }
-  .pub-line .me{color:var(--ink);font-weight:600}
-  .pub-line .title{color:var(--ink);font-weight:500}
-  .pub-line em{font-style:italic}
-  .pub-line .doi{
+
+  .pub-venue{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    line-height:1.55;
+  }
+  .pub-venue em{color:var(--ink);font-style:italic;font-weight:500}
+  .pub-venue .meta{
+    color:var(--ink-mute);
+    font-feature-settings:"tnum";
+  }
+  .pub-venue .doi{
     font-family:"JetBrains Mono",monospace;
-    font-size:13px;
+    font-size:12.5px;
+    margin-left:6px;
+    color:var(--link);
+  }
+  .pub-venue .tag{
+    display:inline-block;
+    font-family:"JetBrains Mono",monospace;
+    font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    padding:2px 7px;
+    margin-left:6px;
+    border:1px solid var(--rule);
+    border-radius:2px;
+    color:var(--ink-mute);
+    vertical-align:1px;
+    background:#fafaf6;
+  }
+  .pub-venue .tag.accepted{
+    color:var(--link);
+    border-color:rgba(26,75,140,.4);
+    background:rgba(26,75,140,.04);
   }
 
   /* ============ FOOTER ============ */
   footer.foot{
-    padding:36px 0 56px;
+    padding:42px 0 50px;
     border-top:1px solid var(--rule);
+    margin-top:42px;
     color:var(--ink-mute);
-    font-size:13.5px;
-    display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;
+    font-size:13px;
+  }
+  footer .foot-row{
+    display:flex;justify-content:space-between;align-items:center;
+    gap:18px;flex-wrap:wrap;
   }
   footer .stamp{
     font-family:"JetBrains Mono",monospace;
-    font-size:10.5px;
-    letter-spacing:.16em;
-    text-transform:uppercase;
+    font-size:11px;letter-spacing:.1em;
+    color:var(--ink-mute);
+    font-feature-settings:"tnum";
+  }
+  footer .colophon{
+    font-style:italic;
+    color:var(--ink-mute);
+    font-size:13px;
   }
 
   /* ============ MOBILE ============ */
-  @media (max-width: 720px){
-    body{font-size:16px}
-    .wrap{padding:0 20px}
+  @media (max-width:680px){
+    .wrap{padding:0 22px}
     nav.primary{display:none}
     .hero{padding:44px 0 8px}
     h1.name{font-size:32px}
-    .row{grid-template-columns:1fr;gap:4px;padding:14px 0}
+    .row{
+      grid-template-columns:1fr;gap:5px;padding:12px 0;
+    }
     .row .when{padding-top:0}
-    .contact-list li{grid-template-columns:1fr;gap:2px}
-    .contact-list .label{padding-top:0}
+    ol.pubs li{padding-left:34px}
+    ul.contact-list li{flex-wrap:wrap;gap:8px}
+    ul.contact-list li .label{width:auto}
+    footer .foot-row{flex-direction:column;align-items:flex-start;gap:10px}
   }
 </style>
 </head>
@@ -275,9 +342,10 @@
 
 <header class="top">
   <div class="wrap top-row">
-    <div class="brand">Rong Tang<span class="dot">·</span>PolyU</div>
+    <div class="brand">Rong Tang</div>
     <nav class="primary">
       <a href="#research">Research</a>
+      <a href="#employment">Employment</a>
       <a href="#publications">Publications</a>
     </nav>
   </div>
@@ -290,18 +358,24 @@
     <h1 class="name">Rong Tang</h1>
     <div class="role">Assistant Professor</div>
     <div class="affil">
-      <a href="https://www.polyu.edu.hk/ama/people/academic-staff/" style="color:inherit;border:none">Department of Applied Mathematics</a><br>
+      <a href="https://www.polyu.edu.hk/ama/people/academic-staff/">Department of Applied Mathematics</a><br>
       The Hong Kong Polytechnic University, Hong Kong
     </div>
-
     <ul class="contact-list">
-      <li><span class="label">Email</span><span class="val"><a href="mailto:claire.tang@polyu.edu.hk">claire.tang@polyu.edu.hk</a></span></li>
+      <li>
+        <span class="label">Email</span>
+        <span class="val"><a href="mailto:claire.tang@polyu.edu.hk">claire.tang@polyu.edu.hk</a></span>
+      </li>
+      <li>
+        <span class="label">Office</span>
+        <span class="val">Hung Hom, Kowloon, Hong Kong</span>
+      </li>
     </ul>
   </section>
 
   <!-- ============ RESEARCH ============ -->
   <section class="block" id="research">
-    <h2 class="section-title">Research</h2>
+    <h2 class="section-title">Research Interests</h2>
     <div class="content">
       <p>Numerical Analysis and Scientific Computing</p>
     </div>
@@ -312,12 +386,12 @@
     <h2 class="section-title">Employment</h2>
     <div class="rows">
       <div class="row">
-        <div class="when">May 2026 — present</div>
-        <div class="what">Assistant Professor<span class="desc">The Hong Kong Polytechnic University</span></div>
+        <div class="when">May 2026 &mdash; <span class="present">present</span></div>
+        <div class="what">Assistant Professor<span class="desc">Department of Applied Mathematics, The Hong Kong Polytechnic University</span></div>
       </div>
       <div class="row">
-        <div class="when">Aug 2023 — Apr 2026</div>
-        <div class="what">Postdoctoral Fellow<span class="desc">The Hong Kong Polytechnic University</span></div>
+        <div class="when">Aug 2023 &mdash; Apr 2026</div>
+        <div class="what">Postdoctoral Fellow<span class="desc">Department of Applied Mathematics, The Hong Kong Polytechnic University</span></div>
       </div>
     </div>
   </section>
@@ -327,60 +401,55 @@
     <h2 class="section-title">Education</h2>
     <div class="rows">
       <div class="row">
-        <div class="when">Sep 2017 — Aug 2023</div>
+        <div class="when">Sep 2017 &mdash; Aug 2023</div>
         <div class="what">Ph.D. in Mathematics<span class="desc">Johns Hopkins University</span></div>
       </div>
       <div class="row">
-        <div class="when">Sep 2013 — Jun 2017</div>
+        <div class="when">Sep 2013 &mdash; Jun 2017</div>
         <div class="what">B.S. in Mathematics<span class="desc">University of Science and Technology of China</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ PUBLICATIONS (selected) ============ -->
+  <!-- ============ PUBLICATIONS ============ -->
   <section class="block" id="publications">
     <h2 class="section-title">Selected Publications</h2>
     <ol class="pubs">
 
       <li>
-        <div class="pub-line">
-          J. Hu, N. Lei, B. Li, <span class="me">R. Tang</span>.
-          <span class="title">Energy dissipating ALE&ndash;MDR method for Navier&ndash;Stokes free boundary problems with moving contact line.</span>
-          <em>SIAM Journal on Scientific Computing</em>, 2026.
-        </div>
+        <div class="pub-authors">J. Hu, N. Lei, B. Li, <span class="me">R. Tang</span></div>
+        <div class="pub-title">Energy dissipating ALE&ndash;MDR method for Navier&ndash;Stokes free boundary problems with moving contact line</div>
+        <div class="pub-venue"><em>SIAM Journal on Scientific Computing</em>, <span class="meta">2026</span><span class="tag accepted">Accepted</span></div>
       </li>
 
       <li>
-        <div class="pub-line">
-          G. Gao, B. Li, <span class="me">R. Tang</span>.
-          <span class="title">Convergent finite element approximations of surface evolution with relaxed minimal deformation.</span>
-          <em>Numerische Mathematik</em>, 2026.
-          <a class="doi" href="https://doi.org/10.1007/s00211-026-01529-3">DOI:10.1007/s00211-026-01529-3</a>
-        </div>
+        <div class="pub-authors">G. Gao, B. Li, <span class="me">R. Tang</span></div>
+        <div class="pub-title">Convergent finite element approximations of surface evolution with relaxed minimal deformation</div>
+        <div class="pub-venue"><em>Numerische Mathematik</em>, <span class="meta">2026</span> &middot; <a class="doi" href="https://doi.org/10.1007/s00211-026-01529-3">DOI:10.1007/s00211-026-01529-3</a></div>
       </li>
 
       <li>
-        <div class="pub-line">
-          G. Gao, H. Garcke, B. Li, <span class="me">R. Tang</span>.
-          <span class="title">An energy-stable minimal deformation rate scheme for mean curvature flow and surface diffusion.</span>
-          <em>SIAM Journal on Scientific Computing</em>, 48 (2026).
-        </div>
+        <div class="pub-authors">G. Gao, H. Garcke, B. Li, <span class="me">R. Tang</span></div>
+        <div class="pub-title">An energy-stable minimal deformation rate scheme for mean curvature flow and surface diffusion</div>
+        <div class="pub-venue"><em>SIAM Journal on Scientific Computing</em>, <span class="meta">48 (2026), pp. A1095&ndash;A1197</span></div>
       </li>
 
       <li>
-        <div class="pub-line">
-          B. Li, <span class="me">R. Tang</span>.
-          <span class="title">Dynamic Ritz projection of mean curvature flow and optimal L<sup>2</sup> convergence of parametric FEM.</span>
-          <em>SIAM Journal on Numerical Analysis</em>, 63 (2025), 1454&ndash;1481.
-        </div>
+        <div class="pub-authors">B. Li, <span class="me">R. Tang</span></div>
+        <div class="pub-title">Dynamic Ritz projection of mean curvature flow and optimal L<sup>2</sup> convergence of parametric FEM</div>
+        <div class="pub-venue"><em>SIAM Journal on Numerical Analysis</em>, <span class="meta">63 (2025), pp. 1454&ndash;1481</span></div>
       </li>
 
       <li>
-        <div class="pub-line">
-          G. Akrivis, B. Li, <span class="me">R. Tang</span>, H. Zhang.
-          <span class="title">High-order mass-, energy- and momentum-conserving methods for the nonlinear Schr&ouml;dinger equation.</span>
-          <em>Journal of Computational Physics</em>, 2025, art. 113974.
-        </div>
+        <div class="pub-authors">G. Akrivis, B. Li, <span class="me">R. Tang</span>, H. Zhang</div>
+        <div class="pub-title">High-order mass-, energy- and momentum-conserving methods for the nonlinear Schr&ouml;dinger equation</div>
+        <div class="pub-venue"><em>Journal of Computational Physics</em>, <span class="meta">2025, art. 113974</span></div>
+      </li>
+
+      <li>
+        <div class="pub-authors">P. T. Ho, <span class="me">R. Tang</span></div>
+        <div class="pub-title">Fractional Yamabe solitons and the fractional Nirenberg problem</div>
+        <div class="pub-venue"><em>Communications on Pure and Applied Analysis</em>, <span class="meta">20 (2021), pp. 3215&ndash;3234</span></div>
       </li>
 
     </ol>
@@ -389,15 +458,13 @@
 </div>
 
 <footer class="foot">
-  <div class="wrap" style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;width:100%">
-    <div>Set in <em>Source Serif 4</em> &amp; <em>JetBrains Mono</em>. Hand-coded, hosted on GitHub Pages.</div>
-    <div class="stamp">© <span id="yr">2026</span> Rong Tang</div>
+  <div class="wrap foot-row">
+    <div class="colophon">Set in <em>Source Serif 4</em> &amp; <em>JetBrains Mono</em>.</div>
+    <div class="stamp">&copy; <span id="yr">2026</span> Rong Tang</div>
   </div>
 </footer>
 
-<script>
-document.getElementById('yr').textContent=new Date().getFullYear();
-</script>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 
 </body>
 </html>
