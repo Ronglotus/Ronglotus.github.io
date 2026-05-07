@@ -79,7 +79,7 @@
   h1.name{
     font-family:"Source Serif 4",serif;
     font-weight:400;
-    font-size:clamp(40px,5.6vw,52px);
+    font-size:clamp(32px,4.5vw,42px);
     line-height:1.05;
     letter-spacing:-.02em;
     color:var(--ink);
@@ -160,6 +160,15 @@
     content:"";flex:1;height:1px;background:var(--rule);
   }
 
+  /* Larger, darker titles for Employment and Education */
+  #employment h2.section-title,
+  #education h2.section-title,
+  #publications h2.section-title{
+    font-size:16px;
+    color:var(--ink);
+    font-weight:600;
+  }
+
   .content p{margin-bottom:14px;color:var(--ink-soft);font-size:17px}
   .content p:last-child{margin-bottom:0}
 
@@ -195,11 +204,12 @@
     font-family:"JetBrains Mono",monospace;
     font-size:12px;
     letter-spacing:.04em;
-    color:var(--ink-mute);
+    color:var(--ink);
     padding-top:2px;
+    font-weight:500;
   }
-  .row .what{font-size:16.5px;color:var(--ink);line-height:1.45}
-  .row .what .desc{display:block;color:var(--ink-mute);font-size:14.5px;margin-top:2px;font-style:italic}
+  .row .what{font-size:17px;color:var(--ink);line-height:1.45;font-weight:500}
+  .row .what .desc{display:block;color:var(--ink-soft);font-size:15px;margin-top:4px;font-style:italic;font-weight:400}
   .row .what em.where{color:var(--ink-soft);font-style:normal}
 
   /* ============ PUBLICATIONS ============ */
@@ -232,54 +242,6 @@
     font-size:13px;
   }
 
-  /* ============ VISITORS / MAP ============ */
-  .visitors-frame{
-    border:1px solid var(--rule);
-    border-radius:3px;
-    padding:28px;
-    background:linear-gradient(#fcfdfe,#fff);
-    text-align:center;
-  }
-  .visitors-frame .map-host{
-    min-height:240px;
-    display:flex;align-items:center;justify-content:center;
-    overflow:hidden;
-  }
-  .visitors-frame .map-host img,
-  .visitors-frame .map-host canvas,
-  .visitors-frame .map-host iframe{max-width:100%;height:auto}
-  .visitors-frame .placeholder{
-    color:var(--ink-mute);
-    font-size:14px;
-    line-height:1.55;
-    max-width:46ch;
-    margin:0 auto;
-  }
-  .visitors-frame .placeholder svg{
-    display:block;
-    margin:0 auto 14px;
-    width:100%;
-    max-width:520px;
-    height:auto;
-    opacity:.85;
-  }
-  .visitors-frame .placeholder code{
-    font-family:"JetBrains Mono",monospace;
-    font-size:12px;
-    background:var(--rule-soft);
-    padding:2px 6px;
-    border-radius:2px;
-    color:var(--ink-soft);
-  }
-  .visitors-caption{
-    margin-top:14px;
-    font-family:"JetBrains Mono",monospace;
-    font-size:11px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--ink-mute);
-  }
-
   /* ============ FOOTER ============ */
   footer.foot{
     padding:36px 0 56px;
@@ -301,7 +263,7 @@
     .wrap{padding:0 20px}
     nav.primary{display:none}
     .hero{padding:44px 0 8px}
-    h1.name{font-size:40px}
+    h1.name{font-size:32px}
     .row{grid-template-columns:1fr;gap:4px;padding:14px 0}
     .row .when{padding-top:0}
     .contact-list li{grid-template-columns:1fr;gap:2px}
@@ -317,7 +279,6 @@
     <nav class="primary">
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
-      <a href="#visitors">Visitors</a>
     </nav>
   </div>
 </header>
@@ -329,13 +290,12 @@
     <h1 class="name">Rong Tang</h1>
     <div class="role">Assistant Professor</div>
     <div class="affil">
-      Department of Applied Mathematics<br>
-      The Hong Kong Polytechnic University, Hong Kong SAR
+      <a href="https://www.polyu.edu.hk/ama/people/academic-staff/" style="color:inherit;border:none">Department of Applied Mathematics</a><br>
+      The Hong Kong Polytechnic University, Hong Kong
     </div>
 
     <ul class="contact-list">
       <li><span class="label">Email</span><span class="val"><a href="mailto:claire.tang@polyu.edu.hk">claire.tang@polyu.edu.hk</a></span></li>
-      <li><span class="label">Alt</span><span class="val"><a href="mailto:tangronglotus@gmail.com">tangronglotus@gmail.com</a></span></li>
     </ul>
   </section>
 
@@ -343,10 +303,7 @@
   <section class="block" id="research">
     <h2 class="section-title">Research</h2>
     <div class="content">
-      <ul class="interests">
-        <li>Parametric finite element methods for mean curvature flow, surface diffusion, and surface evolution with moving contact lines.</li>
-        <li>Arbitrary Lagrangian&ndash;Eulerian (ALE) finite element methods for fluid&ndash;structure interaction and free&ndash;boundary fluid dynamics.</li>
-      </ul>
+      <p>Numerical Analysis and Scientific Computing</p>
     </div>
   </section>
 
@@ -371,11 +328,11 @@
     <div class="rows">
       <div class="row">
         <div class="when">Sep 2017 — Aug 2023</div>
-        <div class="what">Ph.D. in Mathematics<span class="desc">Johns Hopkins University, USA</span></div>
+        <div class="what">Ph.D. in Mathematics<span class="desc">Johns Hopkins University</span></div>
       </div>
       <div class="row">
         <div class="when">Sep 2013 — Jun 2017</div>
-        <div class="what">B.S. in Mathematics, Special Class for the Gifted Young<span class="desc">University of Science and Technology of China</span></div>
+        <div class="what">B.S. in Mathematics<span class="desc">University of Science and Technology of China</span></div>
       </div>
     </div>
   </section>
@@ -398,7 +355,7 @@
           G. Gao, B. Li, <span class="me">R. Tang</span>.
           <span class="title">Convergent finite element approximations of surface evolution with relaxed minimal deformation.</span>
           <em>Numerische Mathematik</em>, 2026.
-          <a class="doi" href="https://doi.org/10.1007/s00211-026-01529-3">doi:10.1007/s00211-026-01529-3</a>
+          <a class="doi" href="https://doi.org/10.1007/s00211-026-01529-3">DOI:10.1007/s00211-026-01529-3</a>
         </div>
       </li>
 
@@ -429,22 +386,6 @@
     </ol>
   </section>
 
-  <!-- ============ VISITORS / MAP ============ -->
-  <section class="block" id="visitors">
-    <h2 class="section-title">Visitors</h2>
-    <div class="visitors-frame">
-
-      <!-- =====================================================
-           ▼▼▼  VISITOR-MAP HOST — replace the placeholder below
-                with your ClustrMaps embed code (see README).
-           ===================================================== -->
-      <div class="map-host" id="map-host">
-        <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=_LN6-ZSjm_8p6utXRsDMi8LWhjyVu3u7Pmhh-O37Cd8"></script>
-      </div>
-      <div class="visitors-caption">Welcome — wherever you're reading from.</div>
-    </div>
-  </section>
-
 </div>
 
 <footer class="foot">
@@ -454,7 +395,9 @@
   </div>
 </footer>
 
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
 
 </body>
 </html>
